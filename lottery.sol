@@ -34,7 +34,7 @@ contract Lottery{
     }
 
     function pickWinner() public {
-        require( admin != msg.sender , "Admin can't play");
+        require( admin == msg.sender , "Admin can't play");
         require( players.length >=3, "Not enough players");
 
         address payable winner;
